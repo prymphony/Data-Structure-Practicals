@@ -1,0 +1,14 @@
+
+'''Adjacency Matrix'''
+
+vertices = int(input("Enter number of Vertices : "))
+matrix = [[0 for i in range(vertices)]for j in range(vertices)]
+
+edges = int(input("Enter Number of Edges :  "))
+for i in range(edges):
+    u, v = map(int, input("Enter Edge u v :  ").split())
+    matrix[u][v] = 1
+    matrix[v][u] = 1
+
+for row in matrix:
+    print(row)
