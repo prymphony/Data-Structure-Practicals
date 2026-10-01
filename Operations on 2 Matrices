@@ -1,0 +1,73 @@
+'''Matrix '''
+r = int(input("Enter Number of Rows : "))
+c = int(input("Enter Number of Columns : "))
+
+M1 = []
+print("FIRST Matrix : ")
+for i in range(r):
+    row = []
+    for j in range(c):
+        row.append(int(input("Enter Element : ")))
+    M1.append(row)
+
+M2 = []
+print("SECOND Matrix :")
+for i in range(r):
+    row = []
+    for j in range(c):
+        row.append(int(input("Enter Element : ")))
+    M2.append(row)
+while True:
+    print("\n---Matrix Menu---\n")
+    print("1. Addition ")
+    print("2. Multiplication ")
+    print("3. Merge ")
+    print("4. Exit")
+    print("5. Transpose of M1")
+
+    choice = int(input("Enter Choice : "))
+    if choice == 1:
+        print("Addition : \n")
+        add = []
+        for i in range(r):
+            row = []
+            for j in range(c):
+                row.append(M1[i][j] + M2[i][j])
+            add.append(row)
+        for row in add:
+            print(row)
+            
+                
+    elif choice == 2:
+        print("Matrix Multiplication : ")
+        result = []
+        for i in range(r):
+            row = []
+            for j in range(c):
+                sum = 0
+                for k in range(c):
+                    sum += M1[i][k]* M2[k][j]
+                row.append(sum)
+            result.append(row)
+        for row in result:
+            print(row)
+            
+    elif choice == 3:
+        print("Merge Matrix ")
+
+        print(M1 + M2)
+            
+    elif choice == 4:
+        print("Program Exited. ")
+
+    elif choice == 5:
+        trasp = []
+        for i in range(c):
+            row =  []
+            for j in range(r):
+                row.append(M1[j][i])
+            trasp.append(row)
+        for row in trasp:
+            print(row)
+    else:
+        print("Invalid Choice.")
